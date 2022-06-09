@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>PokeDex</title>
+</head>
+<body>
+    <header>
+        <section class="header-container">
+            <div>
+                <span>Pokemon</span>
+            </div>
+            <div class="header-input-search">
+                <input type="text" placeholder="Pokemon">
+            </div>
+        </section>
+        <div class="back-arrow inactive"> < </div>
+    </header>
+    <main>
+        <section class="pokemon-card-container ">
+            <article class="pokemon-cards">
+                <p class="pokemon-cards--name">Charizard</p>
+            </article>
+        </section>
+        <section class="pokemon-details-section inactive">
+            <div>
+                <h2 class="pokemon-details-name">Charizard</h2>
+            </div>
+            <article class="pokemon-info-container">
+                <div class="pokemon-element-container">
+                    <p class="element">flying</p>
+                    <p class="element">fire</p>
+                </div>
+                <div class="pokemon-attributes-container">
+                    <div>
+                        <p><span class="weight-number numbers">90.5</span> KG</p>
+                        <p>weight</p>
+                    </div>
+                    <div>
+                        <p><span class="height-number numbers">1.7</span> M</p>
+                        <p>Height</p>
+                    </div>
+                </div>
+                <div class="pokemon-baseStats-container">
+                    <h3 class="pokemon-baseStats-title">Base Stats</h3>
+                    <ul class="pokemon-baseStats-list">
+                        <li>HP</li>
+                        <li>ATK</li>
+                        <li>DEF</li>
+                        <li>SPD</li>
+                        <li>EXP</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="./src/nodes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./src/navigation.js"></script>
+    <script src="./src/main.js"></script>
+</body>
+</html>

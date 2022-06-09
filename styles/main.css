@@ -1,0 +1,171 @@
+:root{
+    --background-dark: #313331;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 62.5%;
+}
+li{
+    list-style: none;
+}
+
+/* --------- header ----------*/
+
+.header-container{
+    display: flex;
+    padding: 20px 5%;
+}
+.header-input-search{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    height: 30px;
+} 
+.back-arrow{
+    font-size: 4rem;
+    font-weight: bolder;
+    z-index: 1;
+    position: fixed;
+    top: 50px;
+    left: 5%;
+    cursor: pointer;
+
+}
+.header-container--long{
+    width: 100%;
+    background-image: url('https://www.egames.news/__export/1638809435218/sites/debate/img/2021/12/06/cxmo_conseguir_a_charmanderx_charmeleonx_charizard_en_pokxmon_diamante_brillante_y_perla_reluciente.jpg_242310155.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 480px;
+    position: fixed;
+}
+
+/* --------- pokemon card ----------*/
+
+.pokemon-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 3%;
+    background-color: var(--background-dark);
+}
+.pokemon-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url('https://www.egames.news/__export/1638809435218/sites/debate/img/2021/12/06/cxmo_conseguir_a_charmanderx_charmeleonx_charizard_en_pokxmon_diamante_brillante_y_perla_reluciente.jpg_242310155.jpg');
+    width: 125px;
+    height: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+}
+.pokemon-cards--name{
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    align-self: flex-end;
+}
+
+/* ------------------ pokemon details section ----------------- */
+
+.pokemon-details-section{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 100vw;
+    margin-top: 403px;
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(245, 245, 245);
+    color: #000;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.pokemon-details-name{
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+.pokemon-info-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+    align-content: center;
+}
+.pokemon-element-container{
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+}
+.pokemon-element-container .element{
+    border-radius: 50px;
+    width: 75px;
+    background-color: var(--idColor);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#normal{ --idColor: #c2c0b4}
+#fighting{ --idColor: #80321d}
+#flying{ --idColor: #93a4f0}
+#poison{ --idColor: #7c337d}
+#ground{ --idColor: #d2b056}
+#rock{ --idColor: #a78e46}
+#bug{ --idColor: #9eaf1a}
+#ghost{ --idColor: #5a59a8}
+#steel{ --idColor: #9796a6}
+#fire{ --idColor: #df3507}
+#water{ --idColor: #3192f6}
+#grass{ --idColor: #6cbc30}
+#electric{ --idColor: #f7b212}
+#psychic{ --idColor: #e9477e}
+#ice{ --idColor: #79d9f6}
+#dragon{ --idColor: #725cd7}
+#dark{ --idColor: #4b362a}
+#fairy{ --idColor: #e79ce8}
+#unknown{ --idColor: #7a7b6d}
+#shadow{ --idColor: #1c100b}
+
+
+
+
+
+.pokemon-attributes-container{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.pokemon-attributes-container .numbers{
+    font-size: 1.6rem;
+}
+.pokemon-baseStats-title{
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+.pokemon-baseStats-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 400px;
+}
+
+/* ------------------ navigation ------------------- */
+
+.inactive{
+    display: none;
+}
