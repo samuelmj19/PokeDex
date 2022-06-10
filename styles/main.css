@@ -6,6 +6,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style: none;
 }
 html{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -14,13 +16,60 @@ html{
 li{
     list-style: none;
 }
-
+a{
+    color: #000;
+}
+button{
+    background: none;
+    border: none;
+}
 /* --------- header ----------*/
 
 .header-container{
     display: flex;
-    padding: 20px 5%;
+    /* padding-top: 20px; */
+    background-color: #810c08;
 }
+nav{
+    display: inline-block;
+    height: 40px;
+    width: 100vw;
+    
+}
+.logo{
+    padding-left: 3%;
+    
+}
+.icon-bars{
+    float: right;
+    padding-right: 3%;
+    font-size: 2rem;
+    cursor: pointer;
+    
+}
+.nav-list-container{
+    opacity: 0;
+    position: fixed;
+    left: -600px;
+    padding: 0;
+    margin-top: 26px;
+    background-color: #e2e2e2;
+    width: 100%;
+    font-size: 2rem;
+    padding: 0 3%;
+    transition: 0.5s;
+    
+}
+.nav-list-container li{
+    padding: 30px 0;
+    border-bottom: solid 1px #000;
+}
+.nav-list-container.active{
+    opacity: 1;
+    left: 0;
+}
+
+
 .header-input-search{
     display: flex;
     justify-content: center;
@@ -32,12 +81,15 @@ li{
     font-weight: bolder;
     z-index: 1;
     position: fixed;
-    top: 50px;
     left: 5%;
     cursor: pointer;
+    color: #c1c1c163;
 
 }
 .header-container--long{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3%;
     width: 100%;
     background-image: url('https://www.egames.news/__export/1638809435218/sites/debate/img/2021/12/06/cxmo_conseguir_a_charmanderx_charmeleonx_charizard_en_pokxmon_diamante_brillante_y_perla_reluciente.jpg_242310155.jpg');
     background-position: center;
@@ -45,6 +97,12 @@ li{
     background-size: cover;
     height: 480px;
     position: fixed;
+}
+.changePokemon-button{
+    padding-bottom: 100px;
+    font-size: 4rem;
+    color: #c1c1c163;
+    cursor: pointer;
 }
 
 /* --------- pokemon card ----------*/
@@ -96,7 +154,7 @@ li{
 }
 .pokemon-details-name{
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 20px 0;
 }
 .pokemon-info-container{
@@ -108,7 +166,7 @@ li{
 }
 .pokemon-element-container{
     display: flex;
-    width: 70%;
+    width: 90%;
     justify-content: space-around;
 }
 .pokemon-element-container .element{
@@ -117,6 +175,8 @@ li{
     background-color: var(--idColor);
     text-align: center;
     margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
 #normal{ --idColor: #c2c0b4}
@@ -150,11 +210,11 @@ li{
     margin-bottom: 20px;
 }
 .pokemon-attributes-container .numbers{
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 .pokemon-baseStats-title{
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     margin-bottom: 20px;
 }
 .pokemon-baseStats-list{
@@ -162,6 +222,17 @@ li{
     flex-direction: column;
     gap: 10px;
     margin-bottom: 400px;
+    color: #fff;
+    background-color: #313331;
+    padding: 10px;
+    border-radius: 16px;
+    font-size: 1.6rem;
+}
+.pokemon-baseStats-list progress{
+    float: right;
+    height: 20px;
+    
+    
 }
 
 /* ------------------ navigation ------------------- */

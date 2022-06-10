@@ -1,4 +1,6 @@
-backArrow.addEventListener('click',()=> history.back(-1))
+backArrow.addEventListener('click', () => location.hash = '')
+const [_, pokemonID] = location.hash.split('=');
+
 
 window.addEventListener('load', navigator);
 window.addEventListener('hashchange', navigator);
@@ -10,6 +12,9 @@ function navigator(){
     }else{
         pokemonCardsPage();
     }
+
+    document.documentElement.scrollTop = 0;
+
 }
 
 
@@ -19,7 +24,9 @@ function pokemonCardsPage(){
     pokemonCardSection.classList.remove('inactive')
     pokemonDetailsSection.classList.add('inactive')
     backArrow.classList.add('inactive')
-    headerContainer.classList.remove('header-container--long')
+    headerContainer.classList.remove('inactive')
+    headerContainerLong.classList.add('inactive')
+
 
     printPokemon(50);
 
@@ -28,8 +35,19 @@ function pokemonDetailPage(){
     pokemonCardSection.classList.add('inactive')
     pokemonDetailsSection.classList.remove('inactive')
     backArrow.classList.remove('inactive')
-    headerContainer.classList.add('header-container--long')
-    
+    headerContainer.classList.add('inactive')
+    headerContainerLong.classList.remove('inactive')
+ 
     const [_, pokemonID] = location.hash.split('=');
+    previousPokemonBtn.addEventListener('click', () => {
+        location.hash = `#pokemon=${pokemonID-1}`;
+        if(location.hash == '#pokemon=0'){
+            location.hash = 'pokemon=1';
+        }
+    })
+    nextPokemonBtn.addEventListener('click', () => location.hash = `#pokemon=${parseInt(pokemonID)+1}`)
+    
     pokemonDetailsDesigner(pokemonID);
+
+
 }

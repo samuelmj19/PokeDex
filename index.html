@@ -5,17 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/main.css">
+    <script src="https://kit.fontawesome.com/076a6d24e0.js" crossorigin="anonymous"></script>
     <title>PokeDex</title>
 </head>
 <body>
     <header>
         <section class="header-container">
-            <div>
-                <span>Pokemon</span>
-            </div>
-            <div class="header-input-search">
-                <input type="text" placeholder="Pokemon">
-            </div>
+            <nav>
+                <span class="logo">P</span>
+                <ul class="nav-list-container">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">PokeDex</a></li>
+                    <li><a href="#">Collection</a></li>
+                    <li><a href="#">More</a></li>
+                    <li><div class="header-input-search">
+                        <input type="text" placeholder="Pokemon">
+                    </div></li>
+                </ul>
+                <span class="icon-bars" onclick="showMenu()"><i class="fa-solid fa-bars"></i></span>
+            </nav>
+        </section>
+        <section class="header-container--long inactive">
+            <button class="previousPokemon changePokemon-button"><i class="fa-solid fa-circle-arrow-left"></i></button>
+            <button class="nextPokemon changePokemon-button"><i class="fa-solid fa-circle-arrow-right"></i></i></button>
         </section>
         <div class="back-arrow inactive"> < </div>
     </header>
@@ -47,11 +59,12 @@
                 <div class="pokemon-baseStats-container">
                     <h3 class="pokemon-baseStats-title">Base Stats</h3>
                     <ul class="pokemon-baseStats-list">
-                        <li>HP</li>
-                        <li>ATK</li>
-                        <li>DEF</li>
-                        <li>SPD</li>
-                        <li>EXP</li>
+                        <li>HP <progress max="200" value="105"></progress></li>
+                        <li>ATK <progress max="200" value="105" ></progress></li>
+                        <li>DEF <progress max="200" value="105"></progress></li>
+                        <li>S-ATK <progress max="200" value="105"></progress></li>
+                        <li>S-DEF <progress max="200" value="105"></progress></li>
+                        <li>SPD<progress max="200" value="105"></progress></li>
                     </ul>
                 </div>
             </article>

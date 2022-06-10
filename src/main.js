@@ -5,8 +5,10 @@ const API = axios.create({
 
 
 // ---------- utils -----------
-
-
+function showMenu(){
+    const barsBTN = document.querySelector('.nav-list-container');
+    barsBTN.classList.toggle('active')
+}
 
 
 // ---------- API calls -----------
@@ -24,13 +26,12 @@ async function pokemonCardDesigner(pokemonID){
     pokemonCard.addEventListener('click', ()=>location.hash = `pokemon=${pokemon.id}`)
     const pokemonCardName = document.createElement('p');
     pokemonCardName.classList.add('pokemon-cards--name');
-    pokemonCardName.innerText = pokemon.name
+    pokemonCardName.innerText = pokemon.name;
+
+
     pokemonCard.appendChild(pokemonCardName);
     pokemonCardSection.appendChild(pokemonCard);
 
-
-
-    console.log(pokemon)
 }
 function printPokemon(num){
     let count = num;
@@ -42,54 +43,45 @@ function printPokemon(num){
 async function pokemonDetailsDesigner(pokemonID){
     const data = await API('pokemon/' + pokemonID);
     const pokemon = data.data;
+    const stats = pokemon.stats;
     
 
-    headerContainer.style.backgroundColor = `var(--background-dark)`
-    headerContainer.style.backgroundImage = `url(${pokemon.sprites.front_default})`;
-    pokemonDetailName.innerHTML = pokemon.name;
+    headerContainerLong.style.backgroundColor = `var(--background-dark)`
+    headerContainerLong.style.backgroundImage = `url(${pokemon.sprites.front_default})`;
+    pokemonDetailName.innerHTML = pokemon.name;    
     
     const elementContainer = document.createElement('div');
     elementContainer.classList.add('pokemon-element-container');
     pokemonElementContainer.innerHTML = '';
-    getPokemonTypes(pokemon.id)
+    getPokemonTypes(pokemon.id, pokemonElementContainer)
 
     const weight = document.querySelector('.weight-number');
     weight.innerHTML = pokemon.weight;
     const height = document.querySelector('.height-number');
     height.innerHTML = pokemon.height;
 
-
-
-
-
-
-
-    // const pokemonCard = document.createElement('article');
-    // pokemonCard.classList.add('pokemon-cards');
-    // pokemonCard.style.backgroundColor = `green`
-    // pokemonCard.style.backgroundImage = `url(${pokemon.sprites.front_default})`;
-    // pokemonCard.addEventListener('click', ()=>location.hash = `pokemon=${pokemon.id}`)
-    // const pokemonCardName = document.createElement('p');
-    // pokemonCardName.classList.add('pokemon-cards--name');
-    // pokemonCardName.innerText = pokemon.name
-    // pokemonCard.appendChild(pokemonCardName);
-    // pokemonCardSection.appendChild(pokemonCard);
-
+    pokemonStatsList.innerHTML = `
+        <li>HP <progress max="200" value="${stats[0].base_stat}"></progress></li>
+        <li>ATK <progress max="200" value="${stats[1].base_stat}" ></progress></li>
+        <li>DEF <progress max="200" value="${stats[2].base_stat}"></progress></li>
+        <li>S-ATK <progress max="200" value="${stats[3].base_stat}"></progress></li>
+        <li>S-DEF <progress max="200" value="${stats[4].base_stat}"></progress></li>
+        <li>SPD<progress max="200" value="${stats[5].base_stat}"></progress></li>`
 
     console.log(pokemon)
 }
 
-async function getPokemonTypes(pokemonID){
+async function getPokemonTypes(pokemonID, container){
     const data = await API('pokemon/' + pokemonID);
     const pokemon = data.data;
     const types = pokemon.types;
     console.log('tipos de pokemon' ,types)
-
+    container.innerHTML = "";
     types.forEach(type => {
         const elementP =document.createElement('p');
         elementP.classList.add('element');
         elementP.innerHTML = type.type.name;
         elementP.setAttribute('id', type.type.name);
-        pokemonElementContainer.appendChild(elementP);
+        container.appendChild(elementP);
     });
 }
