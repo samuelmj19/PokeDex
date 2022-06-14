@@ -6,7 +6,6 @@ const API = axios.create({
 
 // ---------- utils -----------
 function showMenu(){
-    const barsBTN = document.querySelector('.nav-list-container');
     barsBTN.classList.toggle('active')
 }
 
@@ -48,7 +47,7 @@ async function pokemonDetailsDesigner(pokemonID){
 
     headerContainerLong.style.backgroundColor = `var(--background-dark)`
     headerContainerLong.style.backgroundImage = `url(${pokemon.sprites.front_default})`;
-    pokemonDetailName.innerHTML = pokemon.name;    
+    pokemonDetailName.innerHTML = `${pokemon.name} #${pokemon.id}`;    
     
     const elementContainer = document.createElement('div');
     elementContainer.classList.add('pokemon-element-container');
@@ -85,3 +84,25 @@ async function getPokemonTypes(pokemonID, container){
         container.appendChild(elementP);
     });
 }
+async function filterPokemonBySearch(pokemonName){
+    const res = await API('pokemon?limit=100000&offset=0.');
+    const pokemonArray = res.data.results;
+    console.log(pokemonArray);
+    const pokemonFiltered = pokemonArray.filter(pokemon => pokemon.name.includes(pokemonName));
+    console.log( 'pokemon Filtered', pokemonFiltered);
+    pokemonFiltered.forEach(pokemon => {
+        pokemonCardDesigner(pokemon.name)
+    });
+    barsBTN.classList.toggle('active');
+
+}
+
+
+async function test(id){
+    const data = await API('pokemon-species/' + id);
+    const pokemon = data.data;
+    console.log('prueba',pokemon)
+}
+
+test(220)
+

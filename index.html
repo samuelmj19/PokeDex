@@ -12,20 +12,26 @@
     <header>
         <section class="header-container">
             <nav>
-                <span class="logo">P</span>
+                <span class="logo"><img src="https://i.pinimg.com/originals/bd/cd/20/bdcd20f5411ee5785889542d303ad4cb.png" alt=""></span>
                 <ul class="nav-list-container">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">PokeDex</a></li>
+                    <li><a href="./index.html">PokeDex</a></li>
                     <li><a href="#">Collection</a></li>
                     <li><a href="#">More</a></li>
-                    <li><div class="header-input-search">
-                        <input type="text" placeholder="Pokemon">
-                    </div></li>
+                    <li><form class="header-input-search-container">
+                        <input type="text" placeholder="Pokemon" class="header-input-search">
+                        <button id="searchBtn">🔍</button>
+                        </form>
+                    </li>
                 </ul>
                 <span class="icon-bars" onclick="showMenu()"><i class="fa-solid fa-bars"></i></span>
             </nav>
         </section>
         <section class="header-container--long inactive">
+            <form class="header-input-search-container--long">
+                <input type="text" placeholder="Pokemon" class="header-input-search--long">
+                <button id="searchBtn--long">🔍</button>
+            </form>
             <button class="previousPokemon changePokemon-button"><i class="fa-solid fa-circle-arrow-left"></i></button>
             <button class="nextPokemon changePokemon-button"><i class="fa-solid fa-circle-arrow-right"></i></i></button>
         </section>

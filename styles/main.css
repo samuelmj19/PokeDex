@@ -23,6 +23,7 @@ button{
     background: none;
     border: none;
 }
+input{outline: none;}
 /* --------- header ----------*/
 
 .header-container{
@@ -34,7 +35,8 @@ nav{
     display: inline-block;
     height: 40px;
     width: 100vw;
-    
+    padding: 10px 0;
+    margin-bottom: 5px;
 }
 .logo{
     padding-left: 3%;
@@ -52,7 +54,7 @@ nav{
     position: fixed;
     left: -600px;
     padding: 0;
-    margin-top: 26px;
+    /* margin-top: 26px; */
     background-color: #e2e2e2;
     width: 100%;
     font-size: 2rem;
@@ -62,20 +64,39 @@ nav{
 }
 .nav-list-container li{
     padding: 30px 0;
+    text-align: center;
     border-bottom: solid 1px #000;
+    font-weight: bold;
+}
+.nav-list-container li a{
+    color: #3f443f;
 }
 .nav-list-container.active{
     opacity: 1;
     left: 0;
 }
-
-
-.header-input-search{
+.logo img{
+    width: 150px;
+    margin-bottom: 5px;
+}
+.header-input-search-container, .header-input-search-container--long{
     display: flex;
     justify-content: center;
     margin: 0 auto;
     height: 30px;
+}
+.header-input-search-container--long{
+    margin-top: 15px;
+    margin-left: 10px;
 } 
+.header-input-search, .header-input-search--long{
+    width: 70%;
+    padding: 5px 10px;
+    border-radius: 16px;
+    /* border: solid 1px #810c08; */
+    border: none;
+    box-shadow: inset 1px 2px 7px 0px #3f443f;
+}
 .back-arrow{
     font-size: 4rem;
     font-weight: bolder;
@@ -87,8 +108,6 @@ nav{
 
 }
 .header-container--long{
-    display: flex;
-    justify-content: space-between;
     padding: 0 3%;
     width: 100%;
     background-image: url('https://www.egames.news/__export/1638809435218/sites/debate/img/2021/12/06/cxmo_conseguir_a_charmanderx_charmeleonx_charizard_en_pokxmon_diamante_brillante_y_perla_reluciente.jpg_242310155.jpg');
@@ -99,12 +118,17 @@ nav{
     position: fixed;
 }
 .changePokemon-button{
-    padding-bottom: 100px;
     font-size: 4rem;
     color: #c1c1c163;
     cursor: pointer;
+    margin-top: 150px;
 }
-
+.previousPokemon{
+    float: left;
+}
+.nextPokemon{
+    float: right;
+}
 /* --------- pokemon card ----------*/
 
 .pokemon-card-container{

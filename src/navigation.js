@@ -1,3 +1,8 @@
+searchBtn.addEventListener('click', () => location.hash = 'search=' + searchInput.value);
+searchBtnLong.addEventListener('click', () => {
+    location.hash = 'search=' + searchInputLong.value
+    barsBTN.classList.toggle('active');
+});
 backArrow.addEventListener('click', () => location.hash = '')
 const [_, pokemonID] = location.hash.split('=');
 
@@ -9,7 +14,11 @@ function navigator(){
     if (location.hash.startsWith('#pokemon=')){
         console.log('pokemon!!');
         pokemonDetailPage();
-    }else{
+    }else if (location.hash.startsWith('#search=')){
+        console.log('tamo bucando manito');
+        searchPage();
+    }
+    else{
         pokemonCardsPage();
     }
 
@@ -49,5 +58,19 @@ function pokemonDetailPage(){
     
     pokemonDetailsDesigner(pokemonID);
 
+
+}
+function searchPage(){
+    pokemonCardSection.innerHTML = ''
+
+    pokemonCardSection.classList.remove('inactive');
+    pokemonDetailsSection.classList.add('inactive');
+    backArrow.classList.add('inactive');
+    headerContainer.classList.remove('inactive');
+    headerContainerLong.classList.add('inactive');
+
+    const [_, pokemonName] = location.hash.split('=');
+    
+    filterPokemonBySearch(pokemonName);
 
 }
