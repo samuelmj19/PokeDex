@@ -14,10 +14,34 @@
             <nav>
                 <span class="logo"><img src="https://i.pinimg.com/originals/bd/cd/20/bdcd20f5411ee5785889542d303ad4cb.png" alt=""></span>
                 <ul class="nav-list-container">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="./index.html">Home</a></li>
                     <li><a href="./index.html">PokeDex</a></li>
                     <li><a href="#">Collection</a></li>
-                    <li><a href="#">More</a></li>
+                    <li onclick="showMenuFilter()">
+                        <p>Filter</p>
+                        <ul class="nav-filter-list-container inactive">
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(1)" id="normal">Normal</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(2)" id="fighting">fighting</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(3)" id="flying">flying</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(4)" id="poison">poison</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(5)" id="ground">ground</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(6)" id="rock">rock</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(7)" id="bug">bug</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(8)" id="ghost">ghost</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(9)" id="steel">steel</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(10)" id="fire">fire</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(11)" id="water">water</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(12)" id="grass">grass</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(13)" id="electric">electric</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(14)" id="psychic">psychic</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(15)" id="ice">ice</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(16)" id="dragon">dragon</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(17)" id="dark">dark</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(18)" id="fairy">fairy</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(10001)" id="unknown">unknown</button></li>
+                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(10002)" id="shadow">shadow</button></li>
+                        </ul>
+                    </li>
                     <li><form class="header-input-search-container">
                         <input type="text" placeholder="Pokemon" class="header-input-search">
                         <button id="searchBtn">🔍</button>

@@ -6,6 +6,7 @@ const headerContainerLong = document.querySelector('.header-container--long');
 
 const backArrow = document.querySelector('.back-arrow');
 const barsBTN = document.querySelector('.nav-list-container');
+const FilterBTN = document.querySelector('.nav-filter-list-container');
 
 
 const pokemonDetailName = document.querySelector('.pokemon-details-name');

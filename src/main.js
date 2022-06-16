@@ -8,6 +8,9 @@ const API = axios.create({
 function showMenu(){
     barsBTN.classList.toggle('active')
 }
+function showMenuFilter(){
+    FilterBTN.classList.toggle('inactive')
+}
 
 
 // ---------- API calls -----------
@@ -96,8 +99,6 @@ async function filterPokemonBySearch(pokemonName){
     barsBTN.classList.toggle('active');
 
 }
-
-
 async function test(id){
     const data = await API('pokemon-species/' + id);
     const pokemon = data.data;
@@ -106,3 +107,17 @@ async function test(id){
 
 test(220)
 
+async function filterPokemonByType1(typeID){
+    const res = await API('type/'+ typeID);
+    const data = await res.data;
+    const pokemonTypes = await data.pokemon; 
+    pokemonTypes.forEach(pokemon => {
+        pokemonGot = pokemonCardDesigner(pokemon.pokemon.name);
+        
+    });
+    pokemonCardSection.innerHTML = ''
+    
+    console.log(data)
+    console.log(pokemonTypes)
+    barsBTN.classList.toggle('active');
+}
