@@ -75,10 +75,19 @@ nav{
 .nav-list-container.active{
     opacity: 1;
     left: 0;
+    display: flex;
+    flex-direction: column-reverse;
 }
 .logo img{
     width: 150px;
     margin-bottom: 5px;
+}
+.filter-type-container{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: inset 1px 2px 7px 0px #3f443f;
 }
 .nav-filter-list-container{
     display: flex;
@@ -286,4 +295,75 @@ nav{
 
 .inactive{
     display: none;
+}
+
+
+@media screen and (min-width: 600px) {
+    .nav-list-container{
+    opacity: 1;
+    position: relative;
+    left: 0;
+    padding: 0;
+    /* margin-top: 26px; */
+    background-color: transparent;
+    /* width: 100%; */
+    /* font-size: 2rem; */
+    padding: 0 3%;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+    }
+    nav{
+        display: inline-block;
+        height: 40px;
+        width: 100vw;
+        padding: 10px 0;
+        display: flex;
+        margin-bottom: 5px;
+        justify-content: space-around
+    }
+    .nav-list-container li {
+        padding: none; 
+        text-align: none;
+        border-bottom: none;
+        font-weight: bold;
+    }
+    .icon-bars{
+        display: none;
+    }
+    .nav-filter-list-container{
+        
+    flex-wrap: wrap;
+    justify-content: space-around;
+    transition: 0.5s;
+    flex-direction: row;
+    background-color: black;
+    margin-top: 285px;
+    }
+}
+@media screen and (min-width: 800px) {
+    body{
+        background: #313331;
+    }
+    main{
+        width: 90%;
+        margin: 0 auto;
+    }
+    nav{
+        padding: 10px 50px;
+    }
+    .header-container--long{
+        position: relative;
+        background-size: contain;
+    }
+    .pokemon-details-section{
+        position: relative;
+        margin-top: 0;
+        width: 100%;
+    }
+    .back-arrow{
+        top: 0;
+    }
 }

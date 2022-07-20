@@ -12,35 +12,35 @@
     <header>
         <section class="header-container">
             <nav>
-                <span class="logo"><img src="https://i.pinimg.com/originals/bd/cd/20/bdcd20f5411ee5785889542d303ad4cb.png" alt=""></span>
+                <a href="./index.html">
+                    <span class="logo"><img src="https://i.pinimg.com/originals/bd/cd/20/bdcd20f5411ee5785889542d303ad4cb.png" alt=""></span>
+                </a>
                 <ul class="nav-list-container">
-                    <li><a href="./index.html">Home</a></li>
                     <li><a href="./index.html">PokeDex</a></li>
-                    <li><a href="#">Collection</a></li>
-                    <li onclick="showMenuFilter()">
-                        <p>Filter</p>
-                        <ul class="nav-filter-list-container inactive">
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(1)" id="normal">Normal</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(2)" id="fighting">fighting</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(3)" id="flying">flying</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(4)" id="poison">poison</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(5)" id="ground">ground</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(6)" id="rock">rock</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(7)" id="bug">bug</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(8)" id="ghost">ghost</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(9)" id="steel">steel</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(10)" id="fire">fire</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(11)" id="water">water</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(12)" id="grass">grass</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(13)" id="electric">electric</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(14)" id="psychic">psychic</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(15)" id="ice">ice</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(16)" id="dragon">dragon</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(17)" id="dark">dark</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(18)" id="fairy">fairy</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(10001)" id="unknown">unknown</button></li>
-                            <li><button class="filter-type-btn" onclick="filterPokemonByType1(10002)" id="shadow">shadow</button></li>
-                        </ul>
+                    <li>
+                        <select name="Filter" id="" onclick="filterPokemonByType1(value)" class="filter-type-container">
+                            <option selected disabled>--Filter--</option>
+                            <option class="filter-type-btn" value=1 id="normal">Normal</option>
+                            <option class="filter-type-btn" value=2 id="fighting">fighting</option>
+                            <option class="filter-type-btn" value=3 id="flying">flying</option>
+                            <option class="filter-type-btn" value=4 id="poison">poison</option>
+                            <option class="filter-type-btn" value=5 id="ground">ground</option>
+                            <option class="filter-type-btn" value=6 id="rock">rock</option>
+                            <option class="filter-type-btn" value=7 id="bug">bug</option>
+                            <option class="filter-type-btn" value=8 id="ghost">ghost</option>
+                            <option class="filter-type-btn" value=9 id="steel">steel</option>
+                            <option class="filter-type-btn" value=10 id="fire">fire</option>
+                            <option class="filter-type-btn" value=11 id="water">water</option>
+                            <option class="filter-type-btn" value=12 id="grass">grass</option>
+                            <option class="filter-type-btn" value=13 id="electric">electric</option>
+                            <option class="filter-type-btn" value=14 id="psychic">psychic</option>
+                            <option class="filter-type-btn" value=15 id="ice">ice</option>
+                            <option class="filter-type-btn" value=16 id="dragon">dragon</option>
+                            <option class="filter-type-btn" value=17 id="dark">dark</option>
+                            <option class="filter-type-btn" value=18 id="fairy">fairy</option>
+                            <option class="filter-type-btn" value=10001 id="unknown">unknown</option>
+                            <option class="filter-type-btn" value=10002 id="shadow">shadow</option>
+                        </select>
                     </li>
                     <li><form class="header-input-search-container">
                         <input type="text" placeholder="Pokemon" class="header-input-search">
